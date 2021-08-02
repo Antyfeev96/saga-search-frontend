@@ -23,5 +23,5 @@ export const searchSkillsSuccess = items => ({
 
 export const changeSearchField = search => ({
     type: CHANGE_SEARCH_FIELD,
-    payload: {search},
+    payload: { search },
 });
