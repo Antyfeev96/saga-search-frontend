@@ -1,4 +1,4 @@
-import { takeLatest, put, spawn, debounce, retry, take, fork } from 'redux-saga/effects';
+import { takeLatest, put, spawn, debounce, retry } from 'redux-saga/effects';
 import { searchSkillsRequest, searchSkillsSuccess, searchSkillsFailure } from '../Actions/actionCreators';
 import { CHANGE_SEARCH_FIELD, SEARCH_SKILLS_REQUEST } from '../Actions/actionTypes';
 import { searchSkills } from '../API/index';
@@ -14,7 +14,7 @@ function* handleChangeSearchSaga(action) {
 
 // watcher
 function* watchChangeSearchSaga() {
-    yield debounce(100, filterChangeSearchAction, handleChangeSearchSaga);
+    yield debounce(500, filterChangeSearchAction, handleChangeSearchSaga);
 }
 
 // worker
